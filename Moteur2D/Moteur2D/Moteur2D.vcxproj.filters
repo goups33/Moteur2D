@@ -13,46 +13,16 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Fichiers d%27en-tête\States">
-      <UniqueIdentifier>{0ffc6266-b441-4597-97bc-6772ae42b949}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Fichiers sources\States">
-      <UniqueIdentifier>{77e25061-2ba0-4746-996c-6abf727275a0}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="GameContext.cpp">
-      <Filter>Fichiers sources\States</Filter>
-    </ClCompile>
-    <ClCompile Include="MainMenuState.cpp">
-      <Filter>Fichiers sources\States</Filter>
-    </ClCompile>
-    <ClCompile Include="State.cpp">
-      <Filter>Fichiers sources\States</Filter>
-    </ClCompile>
-    <ClCompile Include="StateManager.cpp">
-      <Filter>Fichiers sources\States</Filter>
     </ClCompile>
     <ClCompile Include="AssetManager.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GameContext.hpp">
-      <Filter>Fichiers d%27en-tête\States</Filter>
-    </ClInclude>
-    <ClInclude Include="MainMenuState.hpp">
-      <Filter>Fichiers d%27en-tête\States</Filter>
-    </ClInclude>
-    <ClInclude Include="StateManager.hpp">
-      <Filter>Fichiers d%27en-tête\States</Filter>
-    </ClInclude>
-    <ClInclude Include="State.hpp">
-      <Filter>Fichiers d%27en-tête\States</Filter>
-    </ClInclude>
     <ClInclude Include="AssetManager.hpp">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>

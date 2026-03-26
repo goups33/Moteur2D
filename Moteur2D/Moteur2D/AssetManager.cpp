@@ -22,7 +22,6 @@ const sf::Texture& AssetManager::GetTexture(const std::string& Index) {
 	else {
 
 		std::cerr << "Texture manquante : " << Index << " ! Utilisation du fallback." << std::endl;
-
 		return *Texture.at("ERROR");
 	}
 }

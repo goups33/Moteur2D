@@ -2,25 +2,30 @@
 
 #include "SFML/Graphics.hpp"
 
-#include "GameContext.hpp"
-#include "StateManager.hpp"
-#include "MainMenuState.hpp"
-
-int main()
+int main(int argc, char* argv[])
 {
-	GameContext context;
-	context.Init();
-	context.stateManager->AddState(std::make_unique<MainMenuState>(context));
-	while (context.window->isOpen()) {
-		while (const std::optional event = context.window->pollEvent()) {
-			if (event->is<sf::Event::Closed>()) {
-				context.window->close();
-			}
-		}
-		context.stateManager->ProcessStateChanges();
-		context.stateManager->update(1.f / 60.f);
-		context.window->clear();
-		context.stateManager->draw();
-		context.window->display();
-	}
+	sf::ContextSettings settings;
+	settings.antiAliasingLevel = 8;
+
+	sf::RenderWindow window(sf::VideoMode({ 800, 600 }), "PlaceHolder", sf::Style::Default, sf::State::Windowed, settings);
+
+    while (window.isOpen())
+    {
+        while (const std::optional event = window.pollEvent())
+        {
+            if (event->is<sf::Event::Closed>())
+            {
+                window.close();
+            }
+            else if (const auto* keyPressed = event->getIf<sf::Event::KeyPressed>())
+            {
+                if (keyPressed->scancode == sf::Keyboard::Scancode::Escape)
+                    window.close();
+            }
+        }
+
+        // Remainder of main loop
+    }
+
+	return 0;
 }
