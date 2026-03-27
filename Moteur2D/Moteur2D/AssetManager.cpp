@@ -7,10 +7,16 @@ AssetManager::AssetManager() {
 	LoadFont("ERROR", "Assets/Font/error.ttf");
 }
 
+AssetManager::~AssetManager() {
+	Texture.clear();
+	Font.clear();
+	Sound.clear();
+}
+
 void AssetManager::LoadTexture(const std::string& Index, const std::string& FilePath) {
-	auto tex = std::make_unique<sf::Texture>();
+	auto tex = new sf::Texture{};
 	if (tex->loadFromFile(FilePath)) {
-		Texture[Index] = std::move(tex);
+		Texture[Index] = tex;
 	}
 }
 
@@ -27,7 +33,7 @@ const sf::Texture& AssetManager::GetTexture(const std::string& Index) {
 }
 
 void AssetManager::LoadFont(const std::string& Index, const std::string& FilePath) {
-	auto tex = std::make_unique<sf::Font>();
+	auto tex = new sf::Font;
 	if (tex->openFromFile(FilePath)) {
 		Font[Index] = std::move(tex);
 	}
@@ -47,9 +53,9 @@ const sf::Font& AssetManager::GetFont(const std::string& Index) {
 }
 
 void AssetManager::LoadSound(const std::string& Index, const std::string& FilePath) {
-	auto tex = std::make_unique<sf::SoundBuffer>();
+	auto tex = new sf::SoundBuffer;
 	if (tex->loadFromFile(FilePath)) {
-		Sound[Index] = std::move(tex);
+		Sound[Index] = tex;
 	}
 }
 

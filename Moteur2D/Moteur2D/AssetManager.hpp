@@ -10,12 +10,13 @@
 class AssetManager
 {
 private:
-	std::unordered_map<std::string, std::unique_ptr<sf::Texture>> Texture;
-	std::unordered_map<std::string, std::unique_ptr<sf::Font>> Font;
-	std::unordered_map<std::string, std::unique_ptr<sf::SoundBuffer>> Sound;
+	std::unordered_map<std::string, sf::Texture*> Texture;
+	std::unordered_map<std::string, sf::Font*> Font;
+	std::unordered_map<std::string, sf::SoundBuffer*> Sound;
 	
 public:
 	AssetManager();
+	~AssetManager();
 
 	void LoadTexture(const std::string& Index, const std::string& FilePath);
 	const sf::Texture& GetTexture(const std::string& Index);
