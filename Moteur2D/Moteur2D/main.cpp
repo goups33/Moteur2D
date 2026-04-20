@@ -5,14 +5,14 @@
 
 int main(int argc, char* argv[])
 {
-    AssetManager t;
+    AssetManager A_set;
 	sf::ContextSettings settings;
 	settings.antiAliasingLevel = 8;
 
 	sf::RenderWindow window(sf::VideoMode({ 800, 600 }), "PlaceHolder", sf::Style::Default, sf::State::Windowed, settings);
     sf::RectangleShape rectangle;
     rectangle.setPosition({ 100,100 });
-    rectangle.setTexture(&t.GetTexture("ERROR"));
+    rectangle.setTexture(&A_set.GetTexture("ERROR"));
     rectangle.setSize({ 64,64 });
 
     while (window.isOpen())
