@@ -11,8 +11,8 @@ int main(int argc, char* argv[])
 
 	sf::RenderWindow window(sf::VideoMode({ 800, 600 }), "PlaceHolder", sf::Style::Default, sf::State::Windowed, settings);
     sf::RectangleShape rectangle;
-    rectangle.setPosition({ 0,0 });
-    rectangle.setTexture(&t.GetTexture("ERRO"));
+    rectangle.setPosition({ 100,100 });
+    rectangle.setTexture(&t.GetTexture("ERROR"));
     rectangle.setSize({ 64,64 });
 
     while (window.isOpen())
