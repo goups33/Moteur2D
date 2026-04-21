@@ -1,19 +1,15 @@
 #include <iostream>
 
 #include "SFML/Graphics.hpp"
-#include "AssetManager.hpp"
+#include "Scene/SceneGame.hpp"
 
 int main(int argc, char* argv[])
 {
-    AssetManager A_set;
+    SceneGame game;
 	sf::ContextSettings settings;
 	settings.antiAliasingLevel = 8;
 
 	sf::RenderWindow window(sf::VideoMode({ 800, 600 }), "PlaceHolder", sf::Style::Default, sf::State::Windowed, settings);
-    sf::RectangleShape rectangle;
-    rectangle.setPosition({ 100,100 });
-    rectangle.setTexture(&A_set.GetTexture("ERROR"));
-    rectangle.setSize({ 64,64 });
 
     while (window.isOpen())
     {
@@ -31,9 +27,11 @@ int main(int argc, char* argv[])
         }
 
         window.clear(sf::Color::White);
-        window.draw(rectangle);
+        game.render(window);
         window.display();
     }
+
+    game.~SceneGame();
 
 	return 0;
 }
